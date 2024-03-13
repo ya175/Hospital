@@ -1,0 +1,33 @@
+﻿<div class="container">
+    <div class="row">
+    
+
+@foreach(var item in Model)
+    {
+    <div class="col-md-4">
+        <div class="card">
+
+                    <img src="/images/@item.Img" class="card-img-top" alt="doctor image">
+
+                    <div class="card-body">
+                        <b> <p class="card-text">@item.Name</p></b>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Specialization : @item.Specialization</p>
+                    </div>
+                    <a href="/Doctors/CompleteAppointment?Name=@item.Name" class="btn btn-primary">Book Appointment</a>
+
+        </div>
+    </div>
+
+
+    
+   
+}
+
+    </div>
+</div>
+
+
+
+ 

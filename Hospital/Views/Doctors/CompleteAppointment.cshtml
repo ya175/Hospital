@@ -1,0 +1,105 @@
+﻿ 
+<h1>Complete Appointment with @Model.Name</h1>
+
+<form action="/Appointments/SaveAppointments" id="myForm">
+
+    <div class="form-group">
+        <label for="Name">Patient Name</label>
+        <input type="text" class="form-control" id="PatientName" name="PatientName" placeholder="Name" required>
+    </div>
+    <div class="form-group">
+
+        <label for="Date">Appointment Date </label>
+        <input type="date" class="form-control" id="" name="Date" placeholder="Date" required>
+    </div>
+
+    <div class="form-group">
+
+        <label for="Time">Appointment Time </label>
+        <input type="time" class="form-control" id="" name="Time" placeholder="Time">
+    </div>
+
+    <input type="hidden" id="" name="DoctorName" value="@Model.Name">
+
+
+    <button type="submit" class="btn btn-primary">Complete Appointment</button>
+
+</form>
+
+
+
+
+@* Modal 1 *@
+
+<div class="modal fade" id="saveDataModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Do You need to save changes</h5>
+
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeButton">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="saveAppointment">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeButton2"> Close</button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@* // Script *@
+
+<script>
+ 
+
+ //show modal && Prevent default form submission
+
+ document.getElementById('myForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent default form submission
+    $('#saveDataModal').modal('show');
+
+});
+
+//close Modal
+    document.getElementById('closeButton').addEventListener('click', function (event) {
+        $('#saveDataModal').modal('hide');
+  });
+
+    document.getElementById('closeButton2').addEventListener('click', function (event) {
+
+        $('#saveDataModal').modal('hide');
+
+  });
+
+
+  //save data
+ document.getElementById('saveAppointment').addEventListener('click', function (event) {
+        // Submit the form
+        document.getElementById('myForm').submit();
+
+ });
+
+   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

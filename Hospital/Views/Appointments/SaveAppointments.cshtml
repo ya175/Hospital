@@ -1,0 +1,49 @@
+﻿@model Appointments
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th scope="col">Doctor Name</th>
+            <th scope="col">Patient Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+        </tr>
+    </thead>
+    <tbody>
+
+            <tr>
+
+                <td>@Model.DoctorName</td>
+                <td>@Model.PatientName</td>
+                <td>@Model.Date</td>
+                <td>@Model.Time</td>
+            </tr>
+
+        
+    </tbody>
+</table>
+
+
+<button type="button" class="btn btn-success d-none" data-bs-toggle="modal" data-bs-target="#successModal">
+    Success! (hidden button)
+</button>
+
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Congratulations ! Your Appointment has been saved successfully.</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        $('#successModal').modal('show');
+    };
+</script>
